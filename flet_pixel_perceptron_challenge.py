@@ -194,9 +194,10 @@ def bgr_to_base64(bgr):
                 cv2.imencode(imgfmt, bgr)[1]
                 ).decode(base64code)
     return src_base64
-from PIL import Image
-import io
-import base64
+
+#from PIL import Image
+#import io
+#import base64
 #def bgr_to_base64(bgr):
 #    # Convert BGR to RGB (PIL uses RGB format)
 #    rgb = bgr[..., ::-1]
@@ -405,4 +406,4 @@ def main(page: ft.Page):
         vertical_alignment=ft.CrossAxisAlignment.START)
     )
 
-ft.app(main)
+ft.app(target=main)
