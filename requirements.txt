@@ -2,3 +2,4 @@ flet
 scikit-learn
 numpy
 matplotlib
+cv2
