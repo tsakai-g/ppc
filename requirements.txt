@@ -1,0 +1,4 @@
+flet
+scikit-learn
+numpy
+matplotlib
