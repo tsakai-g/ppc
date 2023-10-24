@@ -1,7 +1,7 @@
 import flet as ft
 import base64
 import numpy as np
-#import cv2
+import cv2
 from sklearn.datasets import load_digits
 from matplotlib.colors import TwoSlopeNorm as tsn
 import matplotlib.pyplot as plt
@@ -189,34 +189,34 @@ class ColoredTable():
 
 
 imgfmt, base64code = '.jpg', 'ascii'
-# def bgr_to_base64(bgr):
-#     src_base64 = base64.b64encode(
-#                 cv2.imencode(imgfmt, bgr)[1]
-#                 ).decode(base64code)
-#     return src_base64
+def bgr_to_base64(bgr):
+    src_base64 = base64.b64encode(
+                cv2.imencode(imgfmt, bgr)[1]
+                ).decode(base64code)
+    return src_base64
 from PIL import Image
 import io
 import base64
-def bgr_to_base64(bgr):
-    # Convert BGR to RGB (PIL uses RGB format)
-    rgb = bgr[..., ::-1]
-
-    # Create a PIL Image object from the RGB array
-    image_pil = Image.fromarray(rgb)
-
-    # Create an in-memory binary stream (bytes buffer)
-    output_stream = io.BytesIO()
-
-    # Save the image to the bytes buffer in JPEG format
-    image_pil.save(output_stream, format='JPEG')
-
-    # Get the JPEG data as bytes
-    jpeg_bytes = output_stream.getvalue()
-
-    # Encode the bytes to base64
-    src_base64 = base64.b64encode(jpeg_bytes).decode('ascii')
-
-    return src_base64
+#def bgr_to_base64(bgr):
+#    # Convert BGR to RGB (PIL uses RGB format)
+#    rgb = bgr[..., ::-1]
+#
+#    # Create a PIL Image object from the RGB array
+#    image_pil = Image.fromarray(rgb)
+#
+#    # Create an in-memory binary stream (bytes buffer)
+#    output_stream = io.BytesIO()
+#
+#    # Save the image to the bytes buffer in JPEG format
+#    image_pil.save(output_stream, format='JPEG')
+#
+#    # Get the JPEG data as bytes
+#    jpeg_bytes = output_stream.getvalue()
+#
+#    # Encode the bytes to base64
+#    src_base64 = base64.b64encode(jpeg_bytes).decode('ascii')
+#
+#    return src_base64
 
 
 def nn_resize(img, shape):
